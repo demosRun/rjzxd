@@ -1,0 +1,103 @@
+<template lang="pug">
+.page-1
+  .so.so-0
+    img.so.so-1(src="@|3610.png|" o-animation="shrink" go="page2////true")
+    img.so.so-2(src="@|2096.png|")
+    img.so.so-3(src="@|3615.png|")
+    img.so.so-4(src="@|3613.png|")
+    img.so.so-5(src="@|3611.png|")
+    img.so.so-6(src="@|3612.png|")
+    img.so.so-7(src="@|3616.png|")
+    img.so.so-8(src="@|3617.png|")
+    img.so.so-9(src="@|3618.png|" o-animation="flicker")
+    img.so.so-10(src="@|3619.png|")
+    img.so.so-11(src="@|3620.png|")
+    img.so.so-12(src="@|3621.png|")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+      owo.animate('fadeInLeft', this.query('.so-8'), 800)
+      owo.animate('fadeInRight', this.query('.so-7'), 800)
+      owo.animate('slideInUp', this.query('.so-5'), 1600)
+      owo.animate('slideInUp', this.query('.so-6'), 1600)
+    }
+  }
+</script>
+
+
+<style lang="less">
+.so-0 {
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 1508px;
+  z-index: 0;;
+}
+.so-1 {
+  left: 273px;
+  top: 1243px;
+  z-index: -1;
+}
+.so-2 {
+  left: 316px;
+  top: 180px;
+  z-index: -2;
+}
+.so-3 {
+  left: 89px;
+  top: 250px;
+  z-index: -3;
+}
+.so-4 {
+  left: 86px;
+  top: 366px;
+  z-index: -4;
+}
+.so-5 {
+  left: 0px;
+  top: 1001px;
+  z-index: -5;
+}
+.so-6 {
+  left: 0px;
+  top: 994px;
+  z-index: -6;
+}
+.so-7 {
+  left: 380px;
+  top: 498px;
+  z-index: -7;
+}
+.so-8 {
+  left: 61px;
+  top: 502px;
+  z-index: -8;
+}
+.so-9 {
+  left: 254px;
+  top: 580px;
+  z-index: -9;
+}
+.so-10 {
+  left: 51px;
+  top: 536px;
+  z-index: -10;
+}
+.so-11 {
+  left: 541px;
+  top: 494px;
+  z-index: -11;
+}
+.so-12 {
+  left: 0px;
+  top: 480px;
+  z-index: -12;
+}
+.so-13 {
+  left: 0px;
+  top: 0px;
+  z-index: -13;
+}
+</style>

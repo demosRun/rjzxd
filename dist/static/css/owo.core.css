@@ -1,0 +1,358 @@
+body, html, .page, .page-box {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.owo-animation {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.owo-animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.owo-animation-forward {
+  z-index: 99;
+}
+
+img {
+  border: none;
+}
+
+[route-active="false"] {
+  display: none;
+}
+
+/* 清除浮动 */
+.clear:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+  zoom: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+[o-animation="shrink"] {
+  -webkit-animation: shrink 1s linear alternate infinite;
+  animation: shrink 1s linear alternate infinite;
+}
+@-webkit-keyframes shrink{
+  0%{-webkit-transform:scale(0.9);}
+  100%{-webkit-transform:scale(1);}
+}
+@keyframes shrink{
+  0%{transform:scale(0.9);}
+  100%{transform:scale(1);}
+}
+
+.loading-box {
+  width: 100%;
+  height: 100%;
+  background-image: url('../resource/bg.jpg');
+}
+
+.loading-box .loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6%;
+  bottom: 0;
+  margin: auto;
+}
+
+.loading-box .loading-bar {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  height: 10px;
+  background-color: #245cb0;
+  width: 25%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 20px;
+  padding: 4px;
+  box-shadow: 1px 1px 6px #5d739c;
+}
+
+.loading-box .num-bar {
+  background-color: #559bd9;
+  height: 10px;
+  border-radius: 5px;
+  width: 0%;
+  transition: width 0.5s;
+}
+
+.loading-box .num,
+.loading-box .text {
+  position: absolute;
+  top: 0%;
+  bottom: -8%;
+  margin: auto;
+  line-height: 50px;
+  height: 50px;
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.loading-box .text {
+  bottom: -14%;
+}
+@-webkit-keyframes flicker {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 20%;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 20%;
+  }
+}
+
+[o-animation="flicker"] {
+  -webkit-animation: flicker 2s linear 0s infinite alternate;
+  animation: flicker 2s linear 0s infinite alternate;
+}
+
+.page-1 .so-0 {
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 1508px;
+  z-index: 0;
+}
+
+.page-1 .so-1 {
+  left: 273px;
+  top: 1243px;
+  z-index: -1;
+}
+
+.page-1 .so-2 {
+  left: 316px;
+  top: 180px;
+  z-index: -2;
+}
+
+.page-1 .so-3 {
+  left: 89px;
+  top: 250px;
+  z-index: -3;
+}
+
+.page-1 .so-4 {
+  left: 86px;
+  top: 366px;
+  z-index: -4;
+}
+
+.page-1 .so-5 {
+  left: 0px;
+  top: 1001px;
+  z-index: -5;
+}
+
+.page-1 .so-6 {
+  left: 0px;
+  top: 994px;
+  z-index: -6;
+}
+
+.page-1 .so-7 {
+  left: 380px;
+  top: 498px;
+  z-index: -7;
+}
+
+.page-1 .so-8 {
+  left: 61px;
+  top: 502px;
+  z-index: -8;
+}
+
+.page-1 .so-9 {
+  left: 254px;
+  top: 580px;
+  z-index: -9;
+}
+
+.page-1 .so-10 {
+  left: 51px;
+  top: 536px;
+  z-index: -10;
+}
+
+.page-1 .so-11 {
+  left: 541px;
+  top: 494px;
+  z-index: -11;
+}
+
+.page-1 .so-12 {
+  left: 0px;
+  top: 480px;
+  z-index: -12;
+}
+
+.page-1 .so-13 {
+  left: 0px;
+  top: 0px;
+  z-index: -13;
+}
+.page2 .so-0 {
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 1508px;
+  z-index: 0;
+}
+
+.page2 .so-1 {
+  left: 273px;
+  top: 1245px;
+  z-index: -1;
+}
+
+.page2 .so-2 {
+  left: 57px;
+  top: 273px;
+  z-index: -2;
+}
+.page3 {
+  background-image: url('../resource/bg2.jpg');
+}
+
+.page3 .so-0 {
+  left: 57px;
+  top: 224px;
+  width: 637px;
+  height: 1089px;
+  z-index: 0;
+}
+
+.page3 .so-1 {
+  left: 6px;
+  top: 897px;
+  z-index: -1;
+}
+
+.page3 .so-2 {
+  left: 5px;
+  top: 711px;
+  z-index: -2;
+}
+
+.page3 .so-3 {
+  left: 6px;
+  top: 549px;
+  z-index: -3;
+}
+
+.page3 .so-4 {
+  left: 79px;
+  top: 456px;
+  z-index: -4;
+}
+
+.page3 .so-5 {
+  left: 216px;
+  top: 1019px;
+  z-index: 2;
+}
+
+.page3 .so-6 {
+  left: 0px;
+  top: 0px;
+  z-index: -6;
+}
+
+.page3 .so-7 {
+  left: 0px;
+  top: 109px;
+  z-index: -7;
+}
+
+/* 页面切换动画 */
+
+/* 动画效果 */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100vh, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  animation-name: slideInUp;
+}
+
