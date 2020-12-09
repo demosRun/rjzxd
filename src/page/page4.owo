@@ -1,10 +1,63 @@
 <template lang="pug">
 .page4
-  
+  .so.so-0
+    img.so.so-1(src="@|6385.png|")
+    img.so.so-2(src="@|6384.png|" o-tap="window.location.replace('')")
+    img.so.so-3(src="@|6386.png|")
+    img.lave(src="@|lave1.png|")
+    .code 89分
 </template>
 <script>
 module.exports = {
+  created: function () {
+    this.query('.code').innerText = `${owo.script.page3.data.code}分`
+    if (owo.script.page3.data.code > 90) {
+      this.query('.lave').src = '@|lave3.png|'
+    } else if (owo.script.page3.data.code > 80) {
+      this.query('.lave').src = '@|lave2.png|'
+    }
+  }
 }
 </script>
 <style lang="less">
+.so-0 {
+  left: 0px;
+  top: 0px;
+  width: 750px;
+  height: 1508px;
+  z-index: 0;;
+}
+.so-1 {
+  left: 407px;
+  top: 1233px;
+  z-index: -1;
+}
+.so-2 {
+  left: 138px;
+  top: 1233px;
+  z-index: -2;
+}
+.so-3 {
+  left: 11px;
+  top: 180px;
+  z-index: -3;
+}
+.lave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 323px;
+}
+.code {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 486px;
+  font-size: 38px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
 </style>

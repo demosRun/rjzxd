@@ -3,17 +3,22 @@
   .so.so-0
     img.so.so-1(src="@|3623.png|" go="page3//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn")
     img.so.so-2(src="@|3624.png|")
-    p 
+    img.text(src="@|text-1.png|")
+    //- p 2020年，注定不凡。疫情发生以来，美西国家肆意抹黑污蔑、无理攻击中国，制造了一个又一个荒谬绝伦的谣言。在涉港涉疆等问题上，反华势力也不断制造矛盾，用谎言掩盖事实。回顾过去一年，让我们跟随外交部击破谣言，阐明真相。是一语道破天机还是婉转揭穿谎话？测一测你是几分人间真相帝！
 </template>
 <script>
 module.exports = {
   created: function () {
-    const text = '2020年，注定不凡。疫情发生以来，美西国家肆意抹黑污蔑、无理攻击中国，制造了一个又一个荒谬绝伦的谣言。在涉港涉疆等问题上，反华势力也不断制造矛盾，用谎言掩盖事实。回顾过去一年，让我们跟随外交部击破谣言，阐明真相。是一语道破天机还是婉转揭穿谎话？测一测你是几分人间真相帝！'
-    owo.tool.typing(this.query('p'), text, 200)
+    setTimeout(() => {
+      this.query('.text').style.opacity = 1
+    }, 800);
   }
 }
 </script>
 <style lang="less">
+.page2 {
+  background-image: url('@|bg2.jpg|');
+}
 .so-0 {
   left: 0px;
   top: 0px;
@@ -42,5 +47,14 @@ p {
   font-size: 35px;
   line-height: 60px;
   text-indent: 2em;
+}
+.text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 420px;
+  opacity: 0;
+  transition: opacity 1s;
 }
 </style>

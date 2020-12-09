@@ -1,138 +1,388 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <!-- 页面的元信息 -->
-    <title>{TAG_14226_TAG}</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-    <meta name="format-detection" content="telephone=no, email=no"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
-    <meta name="renderer" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="filetype" content="1"/>
-    <meta name="publishedtype" content="1"/>
-    <meta name="pagetype" content="2"/>
-    <meta name="screen-orientation" content="landscape"/>
-    <meta name="x5-orientation" content="landscape"/>
-    <meta name="full-screen" content="yes"/>
-    <meta name="x5-fullscreen" content="true"/>
-    <meta name="browsermode" content="application"/>
-    <meta name="x5-page-mode" content="app"/>
-    
-      <!-- 页面主样式文件 -->
-      <link charset="utf-8"  rel="stylesheet" href="./static/css/owo.core.css">
-      
-    <!-- 附属css文件 -->
-    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-      
-  </head>
-  <body>
-    <div class="scale-box">
+
+<head>
+  <!-- 页面的元信息 -->
+  <title>{TAG_14226_TAG}</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="filetype" content="1" />
+  <meta name="publishedtype" content="1" />
+  <meta name="pagetype" content="2" />
+  <meta name="screen-orientation" content="landscape" />
+  <meta name="x5-orientation" content="landscape" />
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="browsermode" content="application" />
+  <meta name="x5-page-mode" content="app" />
+
+  <!-- 页面主样式文件 -->
+  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.core.css">
+
+  <!-- 附属css文件 -->
+  <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+
+</head>
+
+<body>
+  <div class="scale-box">
     <!-- 页面[loading]-->
-    <div class="loading-box page" template="loading" style="display: none;"><img class="loading" src="./static/resource/loading.png" o-animation="shrink"><div class="loading-bar"><div class="num-bar"></div></div></div>
+    <div class="loading-box page" template="loading" style="display: none;">
+      <img class="loading" src="./static/resource/loading.png" o-animation="shrink">
+      <div class="loading-bar">
+        <div class="num-bar"></div>
+      </div>
+    </div>
     <!-- 页面[page1]-->
-    <div class="page-1 page" template="page1" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/3610.png" o-animation="shrink" go="page2//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn"><img class="so so-2" src="./static/resource/2096.png"><img class="so so-3" src="./static/resource/3615.png"><img class="so so-4" src="./static/resource/3613.png"><img class="so so-5" src="./static/resource/3611.png"><img class="so so-6" src="./static/resource/3612.png"><img class="so so-7" src="./static/resource/3616.png"><img class="so so-8" src="./static/resource/3617.png"><img class="so so-9" src="./static/resource/3618.png" o-animation="flicker"><img class="so so-10" src="./static/resource/3619.png"><img class="so so-11" src="./static/resource/3620.png"><img class="so so-12" src="./static/resource/3621.png"></div></div>
+    <div class="page-1 page" template="page1" style="display: none;">
+      <div class="so so-0">
+        <img class="so so-1" src="./static/resource/3610.png" o-animation="shrink" go="page2//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn">
+        <img class="so so-2" src="./static/resource/2096.png">
+        <img class="so so-3" src="./static/resource/3615.png">
+        <img class="so so-4" src="./static/resource/3613.png">
+        <img class="so so-5" src="./static/resource/3611.png">
+        <img class="so so-6" src="./static/resource/3612.png">
+        <img class="so so-7" src="./static/resource/3616.png" o-animation="floatUpDownSmall">
+        <img class="so so-9" src="./static/resource/3618.png" o-animation="flicker">
+        <img class="so so-10" src="./static/resource/3619.png">
+        <img class="so so-11" src="./static/resource/3620.png">
+        <img class="so so-12" src="./static/resource/3621.png">
+        <div class="so people-1" o-animation="floatUpDownSmall">
+          <img class="so so-3-1" src="./static/resource/33612.png">
+          <img class="so so-3-2" src="./static/resource/32105.png" o-animation="flicker">
+        </div>
+      </div>
+    </div>
     <!-- 页面[page2]-->
-    <div class="page2 page" template="page2" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/3623.png" go="page3//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn"><img class="so so-2" src="./static/resource/3624.png"><p> </p></div></div>
+    <div class="page2 page" template="page2" style="display: none;">
+      <div class="so so-0">
+        <img class="so so-1" src="./static/resource/3623.png" go="page3//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn">
+        <img class="so so-2" src="./static/resource/3624.png">
+        <img class="text" src="./static/resource/text-1.png">
+      </div>
+    </div>
     <!-- 页面[page3]-->
-    <div class="page3 page" template="page3" style="display: none;"><div class="so so-0"><img class="so so-4" src="./static/resource/3631.png"><img class="so so-5" src="./static/resource/3636.png" o-tap="showFensui"><img class="so so-6" src="./static/resource/3630.png"><img class="so so-7" src="./static/resource/3632.png"><div class="message-box"><div class="message-item" style="background-image: url('./static/resource/3635.png');" o-tap="clickItem(0)"><p>在新冠肺炎疫苗研发方面，中国处于领先地位，毫无理由窃取美方相关知识产权。 </p></div><div class="message-item" style="background-image: url('./static/resource/3634.png');" o-tap="clickItem(1)"><p>美国诬称中国窃取其疫苗研发成果，不仅是对中国科学家辛勤付出的极不尊重和对中国抗疫成果的恶意抹黑，也严重损害全球疫苗研发合作，破坏国际抗疫合作。</p></div><div class="message-item" style="background-image: url('./static/resource/3633.png');" o-tap="clickItem(2)"><p>此举是特朗普在选举前对中国采取的强硬措施，以支撑其不断下降的支持率，中国成为其最易攻击和用来拉抬选情的目标。</p></div></div><div class="card-box" style="background-image: url('./static/resource/card-1.png');"></div></div><div class="fensui"><img class="so so-2-1" src="./static/resource/23612.png"><img class="so so-2-2" src="./static/resource/23613.png"><img class="so so-2-3" src="./static/resource/23622.png"><img class="so so-2-4" src="./static/resource/23619.png"><img class="so so-2-5" src="./static/resource/23614.png"><img class="so so-2-6" src="./static/resource/23628.png"><div class="fensui-show"></div></div></div>
+    <div class="page3 page" template="page3" style="display: none;">
+      <div class="so so-0">
+        <img class="so so-4" src="./static/resource/3631.png">
+        <img class="so so-5" src="./static/resource/3636.png" o-tap="showFensui">
+        <img class="so so-6" src="./static/resource/3630.png">
+        <img class="so so-7" src="./static/resource/3632.png">
+        <div class="message-box">
+          <div class="message-item" style="background-image: url('./static/resource/3633.png');" o-tap="clickItem(0)">
+            <p>111111111111111111111111111111111111111111111 </p>
+          </div>
+          <div class="message-item" style="background-image: url('./static/resource/3634.png');" o-tap="clickItem(1)">
+            <p>美国诬称中国窃取其疫苗研发成果，不仅是对中国科学家辛勤付出的极不尊重和对中国抗疫成果的恶意抹黑，也严重损害全球疫苗研发合作，破坏国际抗疫合作。</p>
+          </div>
+          <div class="message-item" style="background-image: url('./static/resource/3635.png');" o-tap="clickItem(2)">
+            <p>此举是特朗普在选举前对中国采取的强硬措施，以支撑其不断下降的支持率，中国成为其最易攻击和用来拉抬选情的目标。</p>
+          </div>
+        </div>
+        <div class="card-box"></div>
+        <div class="active-index">1</div>
+      </div>
+      <div class="fensui">
+        <img class="so so-2-1" src="./static/resource/23612.png">
+        <img class="so so-2-2" src="./static/resource/23613.png" o-tap="showYaoyan">
+        <img class="so so-2-3" src="./static/resource/23622.png">
+        <img class="so so-2-4" src="./static/resource/23619.png">
+        <div class="so so-2-5">第10个谣言</div>
+        <img class="so so-2-6" src="./static/resource/23628.png">
+        <div class="fensui-show"></div>
+        <div class="active-index">1</div>
+      </div>
+    </div>
     <!-- 页面[page4]-->
-    <div class="page4 page" template="page4" style="display: none;"></div></div>
-    
-<!-- 框架script文件 -->
-<script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
-<script type="text/javascript" charset="UTF-8">
-owo.script = {
-  "loading": {
-    "data": {
-      "imgList": [""]
-    },
-    "show": function show() {
-      var mum = owo.query('.num')[0];
-      var numBar = owo.query('.num-bar')[0];
-      this.preloadImages(this.data.imgList, function (e) {
-        setTimeout(function () {
-          owo.go('page1////true');
-        }, 500);
-      }, function (num) {// numBar.style.width = num + '%'
-        // mum.innerHTML = num + '%'
-      });
-    },
-    "preloadImage": function preloadImage(src, successFn) {
-      var image = new Image();
-      image.src = src;
+    <div class="page4 page" template="page4" style="display: none;">
+      <div class="so so-0">
+        <img class="so so-1" src="./static/resource/6385.png">
+        <img class="so so-2" src="./static/resource/6384.png" o-tap="window.location.replace('')">
+        <img class="so so-3" src="./static/resource/6386.png">
+        <img class="lave" src="./static/resource/lave1.png">
+        <div class="code">89分</div>
+      </div>
+    </div>
+  </div>
 
-      image.onload = function () {
-        successFn && successFn(src);
-      };
-
-      image.onerror = function (error) {
-        successFn && successFn(src);
-      };
-    },
-    "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
-      var _this = this;
-
-      if (!Array.isArray(srcs)) {
-        console.log('第一个参数只能是一个数组');
-      } else {
-        var allCount = srcs.length;
-        var doneCount = 0;
-        srcs.forEach(function (srcItem) {
-          _this.preloadImage(srcItem, function () {
-            doneCount++;
-            progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
-
-            if (doneCount === allCount) {
-              doneFn && doneFn();
-            }
+  <!-- 框架script文件 -->
+  <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
+  <script type="text/javascript" charset="UTF-8">
+    owo.script = {
+      "loading": {
+        "data": {
+          "imgList": ["./static/resource/3624.png", "./static/resource/23622.png", "./static/resource/bg.jpg", "./static/resource/23628.png", "./static/resource/3616.png", "./static/resource/3617.png", "./static/resource/bg2.jpg", "./static/resource/3622.jpg", "./static/resource/3619.png", "./static/resource/23619.png", "./static/resource/3630.png", "./static/resource/3618.png", "./static/resource/3612.png", "./static/resource/3632.png", "./static/resource/3613.png", "./static/resource/3611.png", "./static/resource/3615.png", "./static/resource/23612.png", "./static/resource/23614.png", "./static/resource/3631.png", "./static/resource/3610.png", "./static/resource/3636.png", "./static/resource/3623.png", "./static/resource/23613.png", "./static/resource/2096.png", "./static/resource/3621.png", "./static/resource/3620.png", "./static/resource/loading.png", "./static/resource/3634.png", "./static/resource/3635.png", "./static/resource/3633.png", "./static/resource/show-1.png", "./static/resource/show-2.png", "./static/resource/show-3.png", "./static/resource/show-4.png", "./static/resource/show-5.png", "./static/resource/show-6.png", "./static/resource/show-7.png", "./static/resource/show-8.png", "./static/resource/show-9.png", "./static/resource/show-10.png", "./static/resource/show-11.png", "./static/resource/fensui-1.png", "./static/resource/fensui-2.png", "./static/resource/fensui-3.png", "./static/resource/fensui-4.png", "./static/resource/fensui-5.png", "./static/resource/fensui-6.png", "./static/resource/fensui-7.png", "./static/resource/fensui-8.png", "./static/resource/fensui-9.png", "./static/resource/fensui-10.png", "./static/resource/fensui-11.png", "./static/resource/lave1.png", "./static/resource/lave2.png", "./static/resource/lave3.png"]
+        },
+        "show": function show() {
+          var mum = owo.query('.num')[0];
+          var numBar = owo.query('.num-bar')[0];
+          this.preloadImages(this.data.imgList, function(e) {
+            setTimeout(function() {
+              owo.go('page1////true');
+            }, 500);
+          }, function(num) { // numBar.style.width = num + '%'
+            // mum.innerHTML = num + '%'
           });
-        });
+        },
+        "preloadImage": function preloadImage(src, successFn) {
+          var image = new Image();
+          image.src = src;
+
+          image.onload = function() {
+            successFn && successFn(src);
+          };
+
+          image.onerror = function(error) {
+            successFn && successFn(src);
+          };
+        },
+        "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
+          var _this = this;
+
+          if (!Array.isArray(srcs)) {
+            console.log('第一个参数只能是一个数组');
+          } else {
+            var allCount = srcs.length;
+            var doneCount = 0;
+            srcs.forEach(function(srcItem) {
+              _this.preloadImage(srcItem, function() {
+                doneCount++;
+                progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
+
+                if (doneCount === allCount) {
+                  doneFn && doneFn();
+                }
+              });
+            });
+          }
+        }
+      },
+      "page1": {
+        "created": function created() {
+          owo.animate('fadeInLeft', this.query('.people-1'), 800);
+          owo.animate('fadeInRight', this.query('.so-7'), 800);
+          owo.animate('slideInUp', this.query('.so-5'), 1600);
+          owo.animate('slideInUp', this.query('.so-6'), 1600);
+        }
+      },
+      "page2": {
+        "created": function created() {
+          var _this2 = this;
+
+          setTimeout(function() {
+            _this2.query('.text').style.opacity = 1;
+          }, 800);
+        }
+      },
+      "page3": {
+        "data": {
+          "activeIndex": null,
+          "activeNumber": 0,
+          "code": 0,
+          "daan": [
+            [{
+              "text": "在新冠肺炎疫苗研发方面，中国处于领先地位，毫无理由窃取美方相关知识产权。",
+              "grade": 8
+            }, {
+              "text": "美国诬称中国窃取其疫苗研发成果，不仅是对中国科学家辛勤付出的极不尊重和对中国抗疫成果的恶意抹黑，也严重损害全球疫苗研发合作，破坏国际抗疫合作。",
+              "grade": 6
+            }, {
+              "text": "此举是特朗普在选举前对中国采取的强硬措施，以支撑其不断下降的支持率，中国成为其最易攻击和用来拉抬选情的目标。",
+              "grade": 10
+            }],
+            [{
+              "text": "中方一贯坚持不干涉别国内政原则，渗透、干涉别国内政从来不是中国外交的基因和传统。",
+              "grade": 6
+            }, {
+              "text": "美方说法是以己之心度人之腹。",
+              "grade": 10
+            }, {
+              "text": "中国驻休斯敦总领馆的人员构成和数量对美方是公开的。上述说法有违外交常识，十分荒谬。",
+              "grade": 8
+            }],
+            [{
+              "text": "在“修例风波”中，香港警队在持续数月时间里，面对数百场暴力事件，一直按照法律和警队内部指引执法。",
+              "grade": 6
+            }, {
+              "text": "与香港警队克制专业执法形成鲜明对比的是，美国警察暴力执法致人死亡、开枪射杀行为屡见不鲜，仅2019年就达到1004起。",
+              "grade": 8
+            }, {
+              "text": "在香港，没有一位示威者因警队执法而死亡，截至2020年5月底，却有超过590名警务人员在执法中受伤。",
+              "grade": 10
+            }],
+            [{
+              "text": "中国政府治理香港的法律依据是中国宪法和香港基本法，与《中英联合声明》无关。",
+              "grade": 8
+            }, {
+              "text": "随着1997年香港回归中国，《中英联合声明》中所规定的与英方有关的条款已全部履行完毕，英方对回归后的香港无主权、无治权、无监督权。",
+              "grade": 10
+            }, {
+              "text": "《中英联合声明》关于对港的基本方针政策是中方的政策宣示，已充分体现在全国人大所制定的基本法中。中方有关政策宣示不是对英方的承诺。",
+              "grade": 6
+            }],
+            [{
+              "text": "运用现代科技产品和大数据方法提升社会治理水平是国际社会通行做法。目前英国拥有约600万个摄像头，平均每十个人就有一个。全美20大机场对旅行者进行人脸扫描识别。",
+              "grade": 8
+            }, {
+              "text": "新疆依法在公共场所安装摄像头，目的是为了提高社会治理水平、有效预防和打击犯罪。",
+              "grade": 6
+            }, {
+              "text": "这一措施不针对任何特定民族，更何况这些监控设施本身也不会自动去辨认、针对某个特定的民族，它震慑的是坏人，保护的是好人。",
+              "grade": 10
+            }],
+            [{
+              "text": "美国新泽西州贝尔维尔市市长迈克尔·梅尔哈姆表示，自己在2019年11月就已感染新冠病毒，检测结果也显示他已拥有新冠病毒抗体，比美国1月20日报道首例新冠病毒确诊病例早2个多月。",
+              "grade": 10
+            }, {
+              "text": "武汉首先报告疫情不等于就是病毒源头，新冠病毒源头尚未确定。",
+              "grade": 6
+            }, {
+              "text": "病毒溯源是一个严肃的科学问题，要以科学为依据，由科学家和医学专家去研究。",
+              "grade": 8
+            }],
+            [{
+              "text": "1月20日，国家卫健委高级别专家组向媒体通报，新冠病毒可人传人。22日，世卫组织网站警告新冠肺炎病毒可能存在人传人风险。",
+              "grade": 10
+            }, {
+              "text": "美国是第一个从武汉撤出其领馆人员、也是第一个宣布对中国公民入境采取全面限制措施的国家。",
+              "grade": 6
+            }, {
+              "text": "2月2日美对所有中国公民和过去14天到中国的外国人关闭边境，当天美国公开病例仅8例。",
+              "grade": 8
+            }],
+            [{
+              "text": "中国政府本着公开、透明、负责任态度向国际社会通报疫情信息，分享防控经验并开展国际合作，得到国际社会高度肯定。",
+              "grade": 6
+            }, {
+              "text": "《柳叶刀》主编霍顿接受CNN连线采访时表示，中国得知新冠病毒信息时，立即在2019年12月31日通报世卫组织。",
+              "grade": 10
+            }, {
+              "text": "中方信息发布公开透明，而美国内一些政客、反华学者和媒体肆意对中国攻击抹黑。中国是虚假信息的受害者。",
+              "grade": 8
+            }],
+            [{
+              "text": "中方措施是对美方长期打压中方驻美媒体机构、特别是近期驱逐60名中方记者的对等反制。",
+              "grade": 10
+            }, {
+              "text": "中方始终欢迎各国媒体和记者依法依规在中国从事采访报道工作，并将继续提供便利和协助。",
+              "grade": 6
+            }, {
+              "text": "疫情以来，大批外国驻华记者在武汉采访，发表大量第一手报道，外界获取中国有关疫情信息未受任何影响。",
+              "grade": 8
+            }],
+            [{
+              "text": "要求中国为疫情负责、赔偿没有任何法律依据，实质上是美国一些政客出于国内政治甩锅推责的手段。",
+              "grade": 8
+            }, {
+              "text": "疫情是天灾，不是人祸。中国同其他国家一样，都是受害者，不是加害者。",
+              "grade": 6
+            }, {
+              "text": "上世纪80年代，艾滋病首先在美国发现并蔓延至全世界，国际社会从未要求美承担赔偿责任。",
+              "grade": 10
+            }]
+          ]
+        },
+        "created": function created() {
+          this.creatNew(this.data.activeNumber);
+        },
+        "creatNew": function creatNew(index) {
+          this.query('.so-2-5').innerText = "\u7B2C" + (index + 1) + "\u4E2A\u8C23\u8A00";
+          this.query('.card-box').style.backgroundImage = "url('./static/resource/show-" + (index + 1) + ".png')";
+          this.query('.so-2-3').src = "./static/resource/fensui-" + (index + 1) + ".png";
+          var list = this.queryAll('.message-box .message-item p');
+          this.queryAll('.active-index').forEach(function(element) {
+            element.innerText = index + 1;
+          });
+
+          for (var key in list) {
+            if (list.hasOwnProperty(key)) {
+              var element = list[key];
+              console.log(element);
+              element.innerText = this.data.daan[index][key].text;
+            }
+          }
+        },
+        "clickItem": function clickItem(ind) {
+          ind = parseInt(ind);
+          this.data.activeIndex = ind;
+          this.queryAll('.message-item').forEach(function(element) {
+            element.classList.remove('active');
+          });
+          this.$target.classList.add('active');
+          this.query('.so-5').style.display = 'block';
+        },
+        "showFensui": function showFensui() {
+          var _this3 = this;
+
+          console.log(this.data);
+          data = this.data;
+          var codeItem = data.daan[data.activeNumber][data.activeIndex];
+          this.data.code += codeItem.grade;
+          console.log(codeItem);
+          console.log(this.data.code); // 生成粉碎图片
+
+          this.query('.fensui-show').style.backgroundImage = this.query('.card-box').style.backgroundImage;
+          this.query('.so-0').style.display = 'none';
+          this.query('.fensui').style.display = 'block'; // owo.animate('bounceInDown', this.query('.so-2-1'), 2500)
+
+          setTimeout(function() {
+            _this3.query('.fensui').classList.add('shengcheng');
+
+            setTimeout(function() {
+              // this.query('.so-2-5').style.opacity = '1'
+              _this3.query('.so-2-2').style.display = 'block';
+
+              _this3.query('.so-2-1').classList.add('ani');
+
+              _this3.query('.so-2-1').style.opacity = 1;
+            }, 2000);
+          }, 100);
+        },
+        "showYaoyan": function showYaoyan() {
+          if (this.data.activeNumber > 8) {
+            owo.go('page4//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn');
+            return;
+          }
+
+          this.query('.so-2-2').style.display = 'none';
+          this.query('.so-2-1').style.opacity = 0;
+          this.query('.so-2-1').classList.remove('ani');
+          this.data.activeIndex = null;
+          this.queryAll('.message-item').forEach(function(element) {
+            element.classList.remove('active');
+          });
+          this.creatNew(++this.data.activeNumber);
+          this.query('.so-0').style.display = 'block';
+          this.query('.fensui').style.display = 'none';
+          this.query('.fensui').classList.remove('shengcheng'); // this.query('.so-2-5').style.opacity = '0'
+
+          this.query('.so-5').style.display = 'none';
+        }
+      },
+      "page4": {
+        "created": function created() {
+          this.query('.code').innerText = owo.script.page3.data.code + "\u5206";
+
+          if (owo.script.page3.data.code > 90) {
+            this.query('.lave').src = './static/resource/lave3.png';
+          } else if (owo.script.page3.data.code > 80) {
+            this.query('.lave').src = './static/resource/lave2.png';
+          }
+        }
       }
-    }
-  },
-  "page1": {
-    "created": function created() {
-      owo.animate('fadeInLeft', this.query('.so-8'), 800);
-      owo.animate('fadeInRight', this.query('.so-7'), 800);
-      owo.animate('slideInUp', this.query('.so-5'), 1600);
-      owo.animate('slideInUp', this.query('.so-6'), 1600);
-    }
-  },
-  "page2": {
-    "created": function created() {
-      var text = '2020年，注定不凡。疫情发生以来，美西国家肆意抹黑污蔑、无理攻击中国，制造了一个又一个荒谬绝伦的谣言。在涉港涉疆等问题上，反华势力也不断制造矛盾，用谎言掩盖事实。回顾过去一年，让我们跟随外交部击破谣言，阐明真相。是一语道破天机还是婉转揭穿谎话？测一测你是几分人间真相帝！';
-      owo.tool.typing(this.query('p'), text, 200);
-    }
-  },
-  "page3": {
-    "data": {
-      "activeIndex": null
-    },
-    "clickItem": function clickItem(ind) {
-      ind = parseInt(ind);
-      this.data.activeIndex = ind;
-      this.queryAll('.message-item').forEach(function (element) {
-        element.classList.remove('active');
-      });
-      this.$target.classList.add('active');
-    },
-    "showFensui": function showFensui() {
-      // 生成粉碎图片
-      this.query('.fensui-show').style.backgroundImage = this.query('.card-box').style.backgroundImage;
-      this.query('.so-0').style.display = 'none';
-      this.query('.fensui').style.display = 'block';
-    }
-  },
-  "page4": {}
-};
-</script>
+    };
+  </script>
 
-    <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
+  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
 
-    <script src="./static/js/typing.js" type="text/javascript"  charset="UTF-8"></script>
-  </body>
+  <script src="./static/js/typing.js" type="text/javascript" charset="UTF-8"></script>
+</body>
+
 </html>

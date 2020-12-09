@@ -6,26 +6,101 @@
     img.so.so-6(src="@|3630.png|")
     img.so.so-7(src="@|3632.png|")
     .message-box
-      .message-item(style="background-image: url('@|3635.png|');" o-tap="clickItem(0)")
-        p 在新冠肺炎疫苗研发方面，中国处于领先地位，毫无理由窃取美方相关知识产权。 
+      .message-item(style="background-image: url('@|3633.png|');" o-tap="clickItem(0)")
+        p 111111111111111111111111111111111111111111111 
       .message-item(style="background-image: url('@|3634.png|');" o-tap="clickItem(1)")
         p 美国诬称中国窃取其疫苗研发成果，不仅是对中国科学家辛勤付出的极不尊重和对中国抗疫成果的恶意抹黑，也严重损害全球疫苗研发合作，破坏国际抗疫合作。
-      .message-item(style="background-image: url('@|3633.png|');" o-tap="clickItem(2)")
+      .message-item(style="background-image: url('@|3635.png|');" o-tap="clickItem(2)")
         p 此举是特朗普在选举前对中国采取的强硬措施，以支撑其不断下降的支持率，中国成为其最易攻击和用来拉抬选情的目标。
-    .card-box(style="background-image: url('@|card-1.png|');")
+    .card-box
+    .active-index 1
   .fensui
     img.so.so-2-1(src="@|23612.png|")
-    img.so.so-2-2(src="@|23613.png|")
+    img.so.so-2-2(src="@|23613.png|" o-tap="showYaoyan")
     img.so.so-2-3(src="@|23622.png|")
     img.so.so-2-4(src="@|23619.png|")
-    img.so.so-2-5(src="@|23614.png|")
+    .so.so-2-5 第10个谣言
     img.so.so-2-6(src="@|23628.png|")
     .fensui-show
+    .active-index 1
 </template>
 <script>
 module.exports = {
   data: {
-    activeIndex: null
+    activeIndex: null,
+    activeNumber: 0,
+    code: 0,
+    daan: [
+      [
+        {'text': '在新冠肺炎疫苗研发方面，中国处于领先地位，毫无理由窃取美方相关知识产权。', "grade": 8},
+        {'text': '美国诬称中国窃取其疫苗研发成果，不仅是对中国科学家辛勤付出的极不尊重和对中国抗疫成果的恶意抹黑，也严重损害全球疫苗研发合作，破坏国际抗疫合作。', "grade": 6},
+        {'text': '此举是特朗普在选举前对中国采取的强硬措施，以支撑其不断下降的支持率，中国成为其最易攻击和用来拉抬选情的目标。', "grade": 10},
+      ],
+      [
+        {'text': '中方一贯坚持不干涉别国内政原则，渗透、干涉别国内政从来不是中国外交的基因和传统。', "grade": 6},
+        {'text': '美方说法是以己之心度人之腹。', "grade": 10},
+        {'text': '中国驻休斯敦总领馆的人员构成和数量对美方是公开的。上述说法有违外交常识，十分荒谬。', "grade": 8},
+      ],
+      [
+        {'text': '在“修例风波”中，香港警队在持续数月时间里，面对数百场暴力事件，一直按照法律和警队内部指引执法。', "grade": 6},
+        {'text': '与香港警队克制专业执法形成鲜明对比的是，美国警察暴力执法致人死亡、开枪射杀行为屡见不鲜，仅2019年就达到1004起。', "grade": 8},
+        {'text': '在香港，没有一位示威者因警队执法而死亡，截至2020年5月底，却有超过590名警务人员在执法中受伤。', "grade": 10},
+      ],
+      [
+        {'text': '中国政府治理香港的法律依据是中国宪法和香港基本法，与《中英联合声明》无关。', "grade": 8},
+        {'text': '随着1997年香港回归中国，《中英联合声明》中所规定的与英方有关的条款已全部履行完毕，英方对回归后的香港无主权、无治权、无监督权。', "grade": 10},
+        {'text': '《中英联合声明》关于对港的基本方针政策是中方的政策宣示，已充分体现在全国人大所制定的基本法中。中方有关政策宣示不是对英方的承诺。', "grade": 6},
+      ],
+      [
+        {'text': '运用现代科技产品和大数据方法提升社会治理水平是国际社会通行做法。目前英国拥有约600万个摄像头，平均每十个人就有一个。全美20大机场对旅行者进行人脸扫描识别。', "grade": 8},
+        {'text': '新疆依法在公共场所安装摄像头，目的是为了提高社会治理水平、有效预防和打击犯罪。', "grade": 6},
+        {'text': '这一措施不针对任何特定民族，更何况这些监控设施本身也不会自动去辨认、针对某个特定的民族，它震慑的是坏人，保护的是好人。', "grade": 10},
+      ],
+      [
+        {'text': '美国新泽西州贝尔维尔市市长迈克尔·梅尔哈姆表示，自己在2019年11月就已感染新冠病毒，检测结果也显示他已拥有新冠病毒抗体，比美国1月20日报道首例新冠病毒确诊病例早2个多月。', "grade": 10},
+        {'text': '武汉首先报告疫情不等于就是病毒源头，新冠病毒源头尚未确定。', "grade": 6},
+        {'text': '病毒溯源是一个严肃的科学问题，要以科学为依据，由科学家和医学专家去研究。', "grade": 8},
+      ],
+      [
+        {'text': '1月20日，国家卫健委高级别专家组向媒体通报，新冠病毒可人传人。22日，世卫组织网站警告新冠肺炎病毒可能存在人传人风险。', "grade": 10},
+        {'text': '美国是第一个从武汉撤出其领馆人员、也是第一个宣布对中国公民入境采取全面限制措施的国家。', "grade": 6},
+        {'text': '2月2日美对所有中国公民和过去14天到中国的外国人关闭边境，当天美国公开病例仅8例。', "grade": 8},
+      ],
+      [
+        {'text': '中国政府本着公开、透明、负责任态度向国际社会通报疫情信息，分享防控经验并开展国际合作，得到国际社会高度肯定。', "grade": 6},
+        {'text': '《柳叶刀》主编霍顿接受CNN连线采访时表示，中国得知新冠病毒信息时，立即在2019年12月31日通报世卫组织。', "grade": 10},
+        {'text': '中方信息发布公开透明，而美国内一些政客、反华学者和媒体肆意对中国攻击抹黑。中国是虚假信息的受害者。', "grade": 8},
+      ],
+      [
+        {'text': '中方措施是对美方长期打压中方驻美媒体机构、特别是近期驱逐60名中方记者的对等反制。', "grade": 10},
+        {'text': '中方始终欢迎各国媒体和记者依法依规在中国从事采访报道工作，并将继续提供便利和协助。', "grade": 6},
+        {'text': '疫情以来，大批外国驻华记者在武汉采访，发表大量第一手报道，外界获取中国有关疫情信息未受任何影响。', "grade": 8},
+      ],
+      [
+        {'text': '要求中国为疫情负责、赔偿没有任何法律依据，实质上是美国一些政客出于国内政治甩锅推责的手段。', "grade": 8},
+        {'text': '疫情是天灾，不是人祸。中国同其他国家一样，都是受害者，不是加害者。', "grade": 6},
+        {'text': '上世纪80年代，艾滋病首先在美国发现并蔓延至全世界，国际社会从未要求美承担赔偿责任。', "grade": 10},
+      ]
+    ]
+  },
+  created: function () {
+    this.creatNew(this.data.activeNumber)
+  },
+  creatNew: function (index) {
+    this.query('.so-2-5').innerText = `第${index + 1}个谣言`
+    this.query('.card-box').style.backgroundImage = `url('./static/resource/show-${index + 1}.png')`
+    this.query('.so-2-3').src = `./static/resource/fensui-${index + 1}.png`
+    const list = this.queryAll('.message-box .message-item p')
+    this.queryAll('.active-index').forEach(element => {
+      element.innerText = index + 1
+    });
+    for (const key in list) {
+      if (list.hasOwnProperty(key)) {
+        const element = list[key];
+        console.log(element)
+        element.innerText = this.data.daan[index][key].text
+      }
+    }
   },
   clickItem: function (ind) {
     ind = parseInt(ind)
@@ -34,12 +109,50 @@ module.exports = {
       element.classList.remove('active')
     });
     this.$target.classList.add('active')
+    this.query('.so-5').style.display = 'block'
   },
   showFensui: function () {
+    console.log(this.data)
+    data = this.data
+    let codeItem = data.daan[data.activeNumber][data.activeIndex]
+    this.data.code += codeItem.grade
+    console.log(codeItem)
+    console.log(this.data.code)
     // 生成粉碎图片
     this.query('.fensui-show').style.backgroundImage = this.query('.card-box').style.backgroundImage
     this.query('.so-0').style.display = 'none'
     this.query('.fensui').style.display = 'block'
+    // owo.animate('bounceInDown', this.query('.so-2-1'), 2500)
+    
+    setTimeout(() => {
+      this.query('.fensui').classList.add('shengcheng')
+      setTimeout(() => {
+        // this.query('.so-2-5').style.opacity = '1'
+        this.query('.so-2-2').style.display = 'block'
+        this.query('.so-2-1').classList.add('ani')
+        this.query('.so-2-1').style.opacity = 1
+      }, 2000);
+    }, 100);
+    
+  },
+  showYaoyan: function () {
+    if (this.data.activeNumber > 8) {
+      owo.go('page4//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn')
+      return
+    }
+    this.query('.so-2-2').style.display = 'none'
+    this.query('.so-2-1').style.opacity = 0
+    this.query('.so-2-1').classList.remove('ani')
+    this.data.activeIndex = null
+    this.queryAll('.message-item').forEach(element => {
+      element.classList.remove('active')
+    });
+    this.creatNew(++this.data.activeNumber)
+    this.query('.so-0').style.display = 'block'
+    this.query('.fensui').style.display = 'none'
+    this.query('.fensui').classList.remove('shengcheng')
+    // this.query('.so-2-5').style.opacity = '0'
+    this.query('.so-5').style.display = 'none'
   }
 }
 </script>
@@ -52,7 +165,18 @@ module.exports = {
   top: 224px;
   width: 637px;
   height: 1089px;
-  z-index: 0;;
+  z-index: 0;
+  .active-index {
+    color: white;
+    position: absolute;
+    left: 96px;
+    top: 86px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 .so-1 {
   left: 6px;
@@ -78,6 +202,7 @@ module.exports = {
   left: 216px;
   top: 1019px;
   z-index: 2;
+  display: none;
 }
 .so-6 {
   left: 0px;
@@ -93,14 +218,14 @@ module.exports = {
   position: absolute;
   left: -30px;
   right: 0;
-  top: 500px;
+  top: 510px;
   width: 635px;
   margin: auto;
-  font-size: 28px;
+  font-size: 26px;
   .message-item {
     margin-bottom: 20px;
     text-indent: 2em;
-    line-height: 40px;
+    line-height: 34px;
     color: #487bcc;
     background-repeat: no-repeat;
     background-position: 0 center;
@@ -145,15 +270,19 @@ module.exports = {
     left: 30px;
     top: 198px;
     z-index: 2;
+    opacity: 0;
   }
   .so-2-2 {
     left: 273px;
     top: 1245px;
     z-index: 1;
+    display: none;
   }
   .so-2-3 {
     left: 100px;
     top: 490px;
+    transition: top 2s;
+    transition-timing-function: linear;
   }
   .so-2-4 {
     left: 58px;
@@ -164,6 +293,17 @@ module.exports = {
     left: 207px;
     top: 706px;
     z-index: 2;
+    width: 333px;
+    height: 124px;
+    // opacity: 0;
+    transition: opacity 1s;
+    color: white;
+    font-size: 34px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    background-image: url('@|23614.png|');
   }
   .so-2-6 {
     left: 11px;
@@ -178,10 +318,47 @@ module.exports = {
   left: 0;
   right: 0;
   margin: auto;
-  top: 650px;
+  bottom: 626px;
   background-color: #f3f0f0;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom center;
   z-index: 6;
+  transition: bottom 2s, height 2s;
+  transition-timing-function: linear;
+}
+.shengcheng {
+  display: block;
+  .fensui-show {
+    bottom: 865px;
+    height: 0;
+  }
+  .so-2-3 {
+    top: 235px;
+  }
+  .active-index {
+    color: white;
+    position: absolute;
+    left: 158px;
+    top: 567px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    z-index: 99;
+  }
+}
+@keyframes ani1 {
+  0%{
+    transform: scale(4);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ani {
+  animation: ani1 0.5s 1 0s linear;
 }
 </style>

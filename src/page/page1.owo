@@ -7,18 +7,20 @@
     img.so.so-4(src="@|3613.png|")
     img.so.so-5(src="@|3611.png|")
     img.so.so-6(src="@|3612.png|")
-    img.so.so-7(src="@|3616.png|")
-    img.so.so-8(src="@|3617.png|")
+    img.so.so-7(src="@|3616.png|" o-animation="floatUpDownSmall")
     img.so.so-9(src="@|3618.png|" o-animation="flicker")
     img.so.so-10(src="@|3619.png|")
     img.so.so-11(src="@|3620.png|")
     img.so.so-12(src="@|3621.png|")
+    .so.people-1(o-animation="floatUpDownSmall")
+      img.so.so-3-1(src="@|33612.png|")
+      img.so.so-3-2(src="@|32105.png|" o-animation="flicker")
 </template>
 
 <script>
   module.exports = {
     created: function () {
-      owo.animate('fadeInLeft', this.query('.so-8'), 800)
+      owo.animate('fadeInLeft', this.query('.people-1'), 800)
       owo.animate('fadeInRight', this.query('.so-7'), 800)
       owo.animate('slideInUp', this.query('.so-5'), 1600)
       owo.animate('slideInUp', this.query('.so-6'), 1600)
@@ -58,12 +60,12 @@
 .so-5 {
   left: 0px;
   top: 1001px;
-  z-index: -5;
+  z-index: 5;
 }
 .so-6 {
   left: 0px;
   top: 994px;
-  z-index: -6;
+  z-index: 6;
 }
 .so-7 {
   left: 380px;
@@ -99,5 +101,22 @@
   left: 0px;
   top: 0px;
   z-index: -13;
+}
+.people-1 {
+  left: 61px;
+  top: 502px;
+  width: 298px;
+  height: 771px;
+  z-index: 0;;
+}
+.so-3-1 {
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+.so-3-2 {
+  left: 32px;
+  top: 209px;
+  z-index: -2;
 }
 </style>
