@@ -1,11 +1,16 @@
 <template lang="pug">
 .page2
   .so.so-0
-    img.so.so-1(src="@|3623.png|" go="page3////true")
+    img.so.so-1(src="@|3623.png|" go="page3//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn")
     img.so.so-2(src="@|3624.png|")
+    p 
 </template>
 <script>
 module.exports = {
+  created: function () {
+    const text = '2020年，注定不凡。疫情发生以来，美西国家肆意抹黑污蔑、无理攻击中国，制造了一个又一个荒谬绝伦的谣言。在涉港涉疆等问题上，反华势力也不断制造矛盾，用谎言掩盖事实。回顾过去一年，让我们跟随外交部击破谣言，阐明真相。是一语道破天机还是婉转揭穿谎话？测一测你是几分人间真相帝！'
+    owo.tool.typing(this.query('p'), text, 200)
+  }
 }
 </script>
 <style lang="less">
@@ -25,5 +30,17 @@ module.exports = {
   left: 57px;
   top: 273px;
   z-index: -2;
+}
+p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 425px;
+  width: 500px;
+  margin: auto;
+  color: #4779cb;
+  font-size: 35px;
+  line-height: 60px;
+  text-indent: 2em;
 }
 </style>

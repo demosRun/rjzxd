@@ -252,6 +252,19 @@ li {
   top: 273px;
   z-index: -2;
 }
+
+.page2 p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 425px;
+  width: 500px;
+  margin: auto;
+  color: #4779cb;
+  font-size: 35px;
+  line-height: 60px;
+  text-indent: 2em;
+}
 .page3 {
   background-image: url('../resource/bg2.jpg');
 }
@@ -306,7 +319,159 @@ li {
   z-index: -7;
 }
 
+.page3 .message-box {
+  position: absolute;
+  left: -30px;
+  right: 0;
+  top: 500px;
+  width: 635px;
+  margin: auto;
+  font-size: 28px;
+}
+
+.page3 .message-box .message-item {
+  margin-bottom: 20px;
+  text-indent: 2em;
+  line-height: 40px;
+  color: #487bcc;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  padding-left: 35px;
+  font-weight: bold;
+}
+
+.page3 .message-box .message-item p {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #4779cb;
+  background-color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.page3 .message-box .active p {
+  background-image: linear-gradient(#4679cb, #9198e5);
+  color: white;
+  border-color: transparent;
+}
+
+.page3 .card-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 165px;
+  width: 555px;
+  height: 230px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-color: #f9f7f8;
+  background-position: center center;
+}
+
+.page3 .fensui {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750px;
+  height: 1508px;
+  z-index: 9;
+  display: none;
+}
+
+.page3 .fensui .so-2-1 {
+  left: 30px;
+  top: 198px;
+  z-index: 2;
+}
+
+.page3 .fensui .so-2-2 {
+  left: 273px;
+  top: 1245px;
+  z-index: 1;
+}
+
+.page3 .fensui .so-2-3 {
+  left: 100px;
+  top: 490px;
+}
+
+.page3 .fensui .so-2-4 {
+  left: 58px;
+  top: 484px;
+  z-index: 1;
+}
+
+.page3 .fensui .so-2-5 {
+  left: 207px;
+  top: 706px;
+  z-index: 2;
+}
+
+.page3 .fensui .so-2-6 {
+  left: 11px;
+  top: 593px;
+  z-index: 1;
+}
+
+.page3 .fensui-show {
+  width: 555px;
+  height: 230px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 650px;
+  background-color: #f3f0f0;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 6;
+}
+
 /* 页面切换动画 */
+.o-page-rotateCubeLeftOut {
+	-webkit-transform-origin: 100% 50%;
+	-webkit-animation: rotateCubeLeftOut .6s both ease-in;
+	-moz-transform-origin: 100% 50%;
+	-moz-animation: rotateCubeLeftOut .6s both ease-in;
+	transform-origin: 100% 50%;
+	animation: rotateCubeLeftOut .6s both ease-in;
+}
+@-webkit-keyframes rotateCubeLeftOut {
+	50% { -webkit-animation-timing-function: ease-out;  -webkit-transform: translateX(-50%) translateZ(-200px) rotateY(-45deg); }
+	100% { opacity: .3; -webkit-transform: translateX(-100%) rotateY(-90deg); }
+}
+@-moz-keyframes rotateCubeLeftOut {
+	50% { -moz-animation-timing-function: ease-out;  -moz-transform: translateX(-50%) translateZ(-200px) rotateY(-45deg); }
+	100% { opacity: .3; -moz-transform: translateX(-100%) rotateY(-90deg); }
+}
+@keyframes rotateCubeLeftOut {
+	50% { animation-timing-function: ease-out;  transform: translateX(-50%) translateZ(-200px) rotateY(-45deg); }
+	100% { opacity: .3; transform: translateX(-100%) rotateY(-90deg); }
+}
+.o-page-rotateCubeLeftIn {
+	-webkit-transform-origin: 0% 50%;
+	-webkit-animation: rotateCubeLeftIn .6s both ease-in;
+	-moz-transform-origin: 0% 50%;
+	-moz-animation: rotateCubeLeftIn .6s both ease-in;
+	transform-origin: 0% 50%;
+	animation: rotateCubeLeftIn .6s both ease-in;
+}
+
+@-webkit-keyframes rotateCubeLeftIn {
+	0% { opacity: .3; -webkit-transform: translateX(100%) rotateY(90deg); }
+	50% { -webkit-animation-timing-function: ease-out;  -webkit-transform: translateX(50%) translateZ(-200px) rotateY(45deg); }
+}
+@-moz-keyframes rotateCubeLeftIn {
+	0% { opacity: .3; -moz-transform: translateX(100%) rotateY(90deg); }
+	50% { -moz-animation-timing-function: ease-out;  -moz-transform: translateX(50%) translateZ(-200px) rotateY(45deg); }
+}
+@keyframes rotateCubeLeftIn {
+	0% { opacity: .3; transform: translateX(100%) rotateY(90deg); }
+	50% { animation-timing-function: ease-out;  transform: translateX(50%) translateZ(-200px) rotateY(45deg); }
+}
 
 /* 动画效果 */
 @keyframes fadeInLeft {

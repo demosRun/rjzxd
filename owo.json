@@ -85,6 +85,11 @@
 			"name": "main",
 			"src": "./src/main.js",
 			"resource": true
+		},
+		{
+			"name": "typing",
+			"afterbody": true,
+			"src": "./owo_modules/typing.js"
 		}
 	],
 	"styleList": [

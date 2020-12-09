@@ -1,16 +1,46 @@
 <template lang="pug">
 .page3
   .so.so-0
-    img.so.so-1(src="@|3635.png|")
-    img.so.so-2(src="@|3634.png|")
-    img.so.so-3(src="@|3633.png|")
     img.so.so-4(src="@|3631.png|")
-    img.so.so-5(src="@|3636.png|")
+    img.so.so-5(src="@|3636.png|" o-tap="showFensui")
     img.so.so-6(src="@|3630.png|")
     img.so.so-7(src="@|3632.png|")
+    .message-box
+      .message-item(style="background-image: url('@|3635.png|');" o-tap="clickItem(0)")
+        p 在新冠肺炎疫苗研发方面，中国处于领先地位，毫无理由窃取美方相关知识产权。 
+      .message-item(style="background-image: url('@|3634.png|');" o-tap="clickItem(1)")
+        p 美国诬称中国窃取其疫苗研发成果，不仅是对中国科学家辛勤付出的极不尊重和对中国抗疫成果的恶意抹黑，也严重损害全球疫苗研发合作，破坏国际抗疫合作。
+      .message-item(style="background-image: url('@|3633.png|');" o-tap="clickItem(2)")
+        p 此举是特朗普在选举前对中国采取的强硬措施，以支撑其不断下降的支持率，中国成为其最易攻击和用来拉抬选情的目标。
+    .card-box(style="background-image: url('@|card-1.png|');")
+  .fensui
+    img.so.so-2-1(src="@|23612.png|")
+    img.so.so-2-2(src="@|23613.png|")
+    img.so.so-2-3(src="@|23622.png|")
+    img.so.so-2-4(src="@|23619.png|")
+    img.so.so-2-5(src="@|23614.png|")
+    img.so.so-2-6(src="@|23628.png|")
+    .fensui-show
 </template>
 <script>
 module.exports = {
+  data: {
+    activeIndex: null
+  },
+  clickItem: function (ind) {
+    ind = parseInt(ind)
+    this.data.activeIndex = ind
+    this.queryAll('.message-item').forEach(element => {
+      element.classList.remove('active')
+    });
+    this.$target.classList.add('active')
+  },
+  showFensui: function () {
+    // 生成粉碎图片
+    this.query('.fensui-show').style.backgroundImage = this.query('.card-box').style.backgroundImage
+    this.query('.so-0').style.display = 'none'
+    this.query('.fensui').style.display = 'block'
+  }
 }
 </script>
 <style lang="less">
@@ -58,5 +88,100 @@ module.exports = {
   left: 0px;
   top: 109px;
   z-index: -7;
+}
+.message-box {
+  position: absolute;
+  left: -30px;
+  right: 0;
+  top: 500px;
+  width: 635px;
+  margin: auto;
+  font-size: 28px;
+  .message-item {
+    margin-bottom: 20px;
+    text-indent: 2em;
+    line-height: 40px;
+    color: #487bcc;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    padding-left: 35px;
+    font-weight: bold;
+    p {
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #4779cb;
+      background-color: white;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+  .active p {
+    background-image: linear-gradient(#4679cb, #9198e5);
+    color: white;
+    border-color: transparent;
+  }
+}
+.card-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 165px;
+  width: 555px;
+  height: 230px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-color: #f9f7f8;
+  background-position: center center;
+}
+.fensui {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 750px;
+  height: 1508px;
+  z-index: 9;
+  display: none;
+  .so-2-1 {
+    left: 30px;
+    top: 198px;
+    z-index: 2;
+  }
+  .so-2-2 {
+    left: 273px;
+    top: 1245px;
+    z-index: 1;
+  }
+  .so-2-3 {
+    left: 100px;
+    top: 490px;
+  }
+  .so-2-4 {
+    left: 58px;
+    top: 484px;
+    z-index: 1;
+  }
+  .so-2-5 {
+    left: 207px;
+    top: 706px;
+    z-index: 2;
+  }
+  .so-2-6 {
+    left: 11px;
+    top: 593px;
+    z-index: 1;
+  }
+}
+.fensui-show {
+  width: 555px;
+  height: 230px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 650px;
+  background-color: #f3f0f0;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 6;
 }
 </style>

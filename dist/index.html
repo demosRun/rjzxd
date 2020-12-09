@@ -32,11 +32,11 @@
     <!-- 页面[loading]-->
     <div class="loading-box page" template="loading" style="display: none;"><img class="loading" src="./static/resource/loading.png" o-animation="shrink"><div class="loading-bar"><div class="num-bar"></div></div></div>
     <!-- 页面[page1]-->
-    <div class="page-1 page" template="page1" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/3610.png" o-animation="shrink" go="page2////true"><img class="so so-2" src="./static/resource/2096.png"><img class="so so-3" src="./static/resource/3615.png"><img class="so so-4" src="./static/resource/3613.png"><img class="so so-5" src="./static/resource/3611.png"><img class="so so-6" src="./static/resource/3612.png"><img class="so so-7" src="./static/resource/3616.png"><img class="so so-8" src="./static/resource/3617.png"><img class="so so-9" src="./static/resource/3618.png" o-animation="flicker"><img class="so so-10" src="./static/resource/3619.png"><img class="so so-11" src="./static/resource/3620.png"><img class="so so-12" src="./static/resource/3621.png"></div></div>
+    <div class="page-1 page" template="page1" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/3610.png" o-animation="shrink" go="page2//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn"><img class="so so-2" src="./static/resource/2096.png"><img class="so so-3" src="./static/resource/3615.png"><img class="so so-4" src="./static/resource/3613.png"><img class="so so-5" src="./static/resource/3611.png"><img class="so so-6" src="./static/resource/3612.png"><img class="so so-7" src="./static/resource/3616.png"><img class="so so-8" src="./static/resource/3617.png"><img class="so so-9" src="./static/resource/3618.png" o-animation="flicker"><img class="so so-10" src="./static/resource/3619.png"><img class="so so-11" src="./static/resource/3620.png"><img class="so so-12" src="./static/resource/3621.png"></div></div>
     <!-- 页面[page2]-->
-    <div class="page2 page" template="page2" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/3623.png" go="page3////true"><img class="so so-2" src="./static/resource/3624.png"></div></div>
+    <div class="page2 page" template="page2" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/3623.png" go="page3//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn"><img class="so so-2" src="./static/resource/3624.png"><p> </p></div></div>
     <!-- 页面[page3]-->
-    <div class="page3 page" template="page3" style="display: none;"><div class="so so-0"><img class="so so-1" src="./static/resource/3635.png"><img class="so so-2" src="./static/resource/3634.png"><img class="so so-3" src="./static/resource/3633.png"><img class="so so-4" src="./static/resource/3631.png"><img class="so so-5" src="./static/resource/3636.png"><img class="so so-6" src="./static/resource/3630.png"><img class="so so-7" src="./static/resource/3632.png"></div></div>
+    <div class="page3 page" template="page3" style="display: none;"><div class="so so-0"><img class="so so-4" src="./static/resource/3631.png"><img class="so so-5" src="./static/resource/3636.png" o-tap="showFensui"><img class="so so-6" src="./static/resource/3630.png"><img class="so so-7" src="./static/resource/3632.png"><div class="message-box"><div class="message-item" style="background-image: url('./static/resource/3635.png');" o-tap="clickItem(0)"><p>在新冠肺炎疫苗研发方面，中国处于领先地位，毫无理由窃取美方相关知识产权。 </p></div><div class="message-item" style="background-image: url('./static/resource/3634.png');" o-tap="clickItem(1)"><p>美国诬称中国窃取其疫苗研发成果，不仅是对中国科学家辛勤付出的极不尊重和对中国抗疫成果的恶意抹黑，也严重损害全球疫苗研发合作，破坏国际抗疫合作。</p></div><div class="message-item" style="background-image: url('./static/resource/3633.png');" o-tap="clickItem(2)"><p>此举是特朗普在选举前对中国采取的强硬措施，以支撑其不断下降的支持率，中国成为其最易攻击和用来拉抬选情的目标。</p></div></div><div class="card-box" style="background-image: url('./static/resource/card-1.png');"></div></div><div class="fensui"><img class="so so-2-1" src="./static/resource/23612.png"><img class="so so-2-2" src="./static/resource/23613.png"><img class="so so-2-3" src="./static/resource/23622.png"><img class="so so-2-4" src="./static/resource/23619.png"><img class="so so-2-5" src="./static/resource/23614.png"><img class="so so-2-6" src="./static/resource/23628.png"><div class="fensui-show"></div></div></div>
     <!-- 页面[page4]-->
     <div class="page4 page" template="page4" style="display: none;"></div></div>
     
@@ -100,8 +100,31 @@ owo.script = {
       owo.animate('slideInUp', this.query('.so-6'), 1600);
     }
   },
-  "page2": {},
-  "page3": {},
+  "page2": {
+    "created": function created() {
+      var text = '2020年，注定不凡。疫情发生以来，美西国家肆意抹黑污蔑、无理攻击中国，制造了一个又一个荒谬绝伦的谣言。在涉港涉疆等问题上，反华势力也不断制造矛盾，用谎言掩盖事实。回顾过去一年，让我们跟随外交部击破谣言，阐明真相。是一语道破天机还是婉转揭穿谎话？测一测你是几分人间真相帝！';
+      owo.tool.typing(this.query('p'), text, 200);
+    }
+  },
+  "page3": {
+    "data": {
+      "activeIndex": null
+    },
+    "clickItem": function clickItem(ind) {
+      ind = parseInt(ind);
+      this.data.activeIndex = ind;
+      this.queryAll('.message-item').forEach(function (element) {
+        element.classList.remove('active');
+      });
+      this.$target.classList.add('active');
+    },
+    "showFensui": function showFensui() {
+      // 生成粉碎图片
+      this.query('.fensui-show').style.backgroundImage = this.query('.card-box').style.backgroundImage;
+      this.query('.so-0').style.display = 'none';
+      this.query('.fensui').style.display = 'block';
+    }
+  },
   "page4": {}
 };
 </script>
@@ -110,5 +133,6 @@ owo.script = {
     <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
 
+    <script src="./static/js/typing.js" type="text/javascript"  charset="UTF-8"></script>
   </body>
 </html>

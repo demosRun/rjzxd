@@ -1,7 +1,7 @@
 <template lang="pug">
 .page-1
   .so.so-0
-    img.so.so-1(src="@|3610.png|" o-animation="shrink" go="page2////true")
+    img.so.so-1(src="@|3610.png|" o-animation="shrink" go="page2//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn")
     img.so.so-2(src="@|2096.png|")
     img.so.so-3(src="@|3615.png|")
     img.so.so-4(src="@|3613.png|")
