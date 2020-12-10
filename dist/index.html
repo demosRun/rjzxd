@@ -34,6 +34,8 @@
     <!-- 页面[loading]-->
     <div class="loading-box page" template="loading" style="display: none;">
       <img class="loading" src="./static/resource/loading.png" o-animation="shrink">
+      <img class="daziji" src="./static/resource/dazi-mini.png">
+      <img class="zhi" src="./static/resource/zhi-mini.png">
       <div class="loading-bar">
         <div class="num-bar"></div>
       </div>
@@ -45,14 +47,14 @@
         <img class="so so-2" src="./static/resource/2096.png">
         <img class="so so-3" src="./static/resource/3615.png">
         <img class="so so-4" src="./static/resource/3613.png">
-        <img class="so so-5" src="./static/resource/3611.png">
-        <img class="so so-6" src="./static/resource/3612.png">
-        <img class="so so-7" src="./static/resource/3616.png" o-animation="floatUpDownSmall">
+        <img class="so so-5" src="./static/resource/3611.png" o-animation="floatUpDown">
+        <img class="so so-6" src="./static/resource/3612.png" o-animation="floatUpDown">
+        <img class="so so-7" src="./static/resource/3616.png" o-animation="floatLeftRightSmal">
         <img class="so so-9" src="./static/resource/3618.png" o-animation="flicker">
         <img class="so so-10" src="./static/resource/3619.png">
         <img class="so so-11" src="./static/resource/3620.png">
         <img class="so so-12" src="./static/resource/3621.png">
-        <div class="so people-1" o-animation="floatUpDownSmall">
+        <div class="so people-1" o-animation="floatRightLeftSmal">
           <img class="so so-3-1" src="./static/resource/33612.png">
           <img class="so so-3-2" src="./static/resource/32105.png" o-animation="flicker">
         </div>
@@ -61,7 +63,7 @@
     <!-- 页面[page2]-->
     <div class="page2 page" template="page2" style="display: none;">
       <div class="so so-0">
-        <img class="so so-1" src="./static/resource/3623.png" go="page3//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn">
+        <img class="so so-1" src="./static/resource/3623.png" go="page3//rotateCubeLeftOut/rotateCubeLeftIn/true/rotateCubeRightOut/rotateCubeRightIn" o-animation="shrink">
         <img class="so so-2" src="./static/resource/3624.png">
         <img class="text" src="./static/resource/text-1.png">
       </div>
@@ -70,7 +72,7 @@
     <div class="page3 page" template="page3" style="display: none;">
       <div class="so so-0">
         <img class="so so-4" src="./static/resource/3631.png">
-        <img class="so so-5" src="./static/resource/3636.png" o-tap="showFensui">
+        <img class="so so-5" src="./static/resource/3636.png" o-tap="showFensui" o-animation="shrink">
         <img class="so so-6" src="./static/resource/3630.png">
         <img class="so so-7" src="./static/resource/3632.png">
         <div class="message-box">
@@ -105,7 +107,8 @@
         <img class="so so-2" src="./static/resource/6384.png" o-tap="window.location.replace('')">
         <img class="so so-3" src="./static/resource/6386.png">
         <img class="lave" src="./static/resource/lave1.png">
-        <div class="code">89分</div>
+        <div class="code">89分</div><canvas id="canvas" width="750" height="1508"></canvas>
+        <img class="show">
       </div>
     </div>
   </div>
@@ -119,14 +122,19 @@
           "imgList": ["./static/resource/3624.png", "./static/resource/23622.png", "./static/resource/bg.jpg", "./static/resource/23628.png", "./static/resource/3616.png", "./static/resource/3617.png", "./static/resource/bg2.jpg", "./static/resource/3622.jpg", "./static/resource/3619.png", "./static/resource/23619.png", "./static/resource/3630.png", "./static/resource/3618.png", "./static/resource/3612.png", "./static/resource/3632.png", "./static/resource/3613.png", "./static/resource/3611.png", "./static/resource/3615.png", "./static/resource/23612.png", "./static/resource/23614.png", "./static/resource/3631.png", "./static/resource/3610.png", "./static/resource/3636.png", "./static/resource/3623.png", "./static/resource/23613.png", "./static/resource/2096.png", "./static/resource/3621.png", "./static/resource/3620.png", "./static/resource/loading.png", "./static/resource/3634.png", "./static/resource/3635.png", "./static/resource/3633.png", "./static/resource/show-1.png", "./static/resource/show-2.png", "./static/resource/show-3.png", "./static/resource/show-4.png", "./static/resource/show-5.png", "./static/resource/show-6.png", "./static/resource/show-7.png", "./static/resource/show-8.png", "./static/resource/show-9.png", "./static/resource/show-10.png", "./static/resource/show-11.png", "./static/resource/fensui-1.png", "./static/resource/fensui-2.png", "./static/resource/fensui-3.png", "./static/resource/fensui-4.png", "./static/resource/fensui-5.png", "./static/resource/fensui-6.png", "./static/resource/fensui-7.png", "./static/resource/fensui-8.png", "./static/resource/fensui-9.png", "./static/resource/fensui-10.png", "./static/resource/fensui-11.png", "./static/resource/lave1.png", "./static/resource/lave2.png", "./static/resource/lave3.png"]
         },
         "show": function show() {
+          var _this = this;
+
+          setTimeout(function() {
+            _this.query('.zhi').style.top = '516px';
+          }, 0);
           var mum = owo.query('.num')[0];
           var numBar = owo.query('.num-bar')[0];
           this.preloadImages(this.data.imgList, function(e) {
             setTimeout(function() {
               owo.go('page1////true');
             }, 500);
-          }, function(num) { // numBar.style.width = num + '%'
-            // mum.innerHTML = num + '%'
+          }, function(num) {
+            numBar.style.width = num + '%'; // mum.innerHTML = num + '%'
           });
         },
         "preloadImage": function preloadImage(src, successFn) {
@@ -142,7 +150,7 @@
           };
         },
         "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
-          var _this = this;
+          var _this2 = this;
 
           if (!Array.isArray(srcs)) {
             console.log('第一个参数只能是一个数组');
@@ -150,7 +158,7 @@
             var allCount = srcs.length;
             var doneCount = 0;
             srcs.forEach(function(srcItem) {
-              _this.preloadImage(srcItem, function() {
+              _this2.preloadImage(srcItem, function() {
                 doneCount++;
                 progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
 
@@ -172,10 +180,10 @@
       },
       "page2": {
         "created": function created() {
-          var _this2 = this;
+          var _this3 = this;
 
           setTimeout(function() {
-            _this2.query('.text').style.opacity = 1;
+            _this3.query('.text').style.opacity = 1;
           }, 800);
         }
       },
@@ -317,7 +325,7 @@
           this.query('.so-5').style.display = 'block';
         },
         "showFensui": function showFensui() {
-          var _this3 = this;
+          var _this4 = this;
 
           console.log(this.data);
           data = this.data;
@@ -331,15 +339,18 @@
           this.query('.fensui').style.display = 'block'; // owo.animate('bounceInDown', this.query('.so-2-1'), 2500)
 
           setTimeout(function() {
-            _this3.query('.fensui').classList.add('shengcheng');
+            new Audio("./static/resource/3837.mp3").play();
+
+            _this4.query('.fensui').classList.add('shengcheng');
 
             setTimeout(function() {
+              // new Audio("./static/resource/yinzhang.mp3").play()
               // this.query('.so-2-5').style.opacity = '1'
-              _this3.query('.so-2-2').style.display = 'block';
+              _this4.query('.so-2-2').style.display = 'block';
 
-              _this3.query('.so-2-1').classList.add('ani');
+              _this4.query('.so-2-1').classList.add('ani');
 
-              _this3.query('.so-2-1').style.opacity = 1;
+              _this4.query('.so-2-1').style.opacity = 1;
             }, 2000);
           }, 100);
         },
@@ -366,13 +377,67 @@
       },
       "page4": {
         "created": function created() {
+          var _this5 = this;
+
+          var url = './static/resource/lave1.png';
           this.query('.code').innerText = owo.script.page3.data.code + "\u5206";
 
           if (owo.script.page3.data.code > 90) {
-            this.query('.lave').src = './static/resource/lave3.png';
+            url = './static/resource/lave3.png';
           } else if (owo.script.page3.data.code > 80) {
-            this.query('.lave').src = './static/resource/lave2.png';
+            url = './static/resource/lave2.png';
           }
+
+          this.query('.lave').src = url; // 绘制canvas
+
+          var canvas = oCanvas.create({
+            canvas: "#canvas"
+          });
+          canvas.addChild(canvas.display.image({
+            x: 0,
+            y: 0,
+            width: 750,
+            height: 1508,
+            // origin: { x: "center", y: "center" },
+            image: "./static/resource/bg2.jpg"
+          }));
+          canvas.addChild(canvas.display.image({
+            x: 11,
+            y: 180,
+            width: 734,
+            height: 1145,
+            // origin: { x: "center", y: "center" },
+            image: "./static/resource/6386.png"
+          }));
+          canvas.addChild(canvas.display.image({
+            x: 60,
+            y: 323,
+            width: 641,
+            height: 796,
+            // origin: { x: "center", y: "center" },
+            image: url
+          }));
+          canvas.addChild(canvas.display.text({
+            x: 340,
+            y: 492,
+            width: 750,
+            align: 'end',
+            font: "bold 38px sans-serif",
+            // origin: { x: "center", y: "top" },
+            text: owo.script.page3.data.code + "\u5206",
+            fill: "#fff"
+          }));
+          canvas.addChild(canvas.display.image({
+            x: 143,
+            y: 1233,
+            width: 204,
+            height: 78,
+            // origin: { x: "center", y: "center" },
+            image: "./static/resource/share-button.png"
+          }));
+          setTimeout(function() {
+            _this5.query('.show').src = canvas.canvasElement.toDataURL("image/png");
+          }, 500);
         }
       }
     };
@@ -381,8 +446,8 @@
   <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
   <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
   <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/ocanvas-2.10.0.min.js" type="text/javascript" charset="UTF-8"></script>
 
-  <script src="./static/js/typing.js" type="text/javascript" charset="UTF-8"></script>
 </body>
 
 </html>

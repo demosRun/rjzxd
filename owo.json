@@ -87,9 +87,8 @@
 			"resource": true
 		},
 		{
-			"name": "typing",
-			"afterbody": true,
-			"src": "./owo_modules/typing.js"
+			"name": "ocanvas-2.10.0.min",
+			"src": "./src/ocanvas-2.10.0.min.js"
 		}
 	],
 	"styleList": [

@@ -2,7 +2,7 @@
 .page3
   .so.so-0
     img.so.so-4(src="@|3631.png|")
-    img.so.so-5(src="@|3636.png|" o-tap="showFensui")
+    img.so.so-5(src="@|3636.png|" o-tap="showFensui" o-animation="shrink")
     img.so.so-6(src="@|3630.png|")
     img.so.so-7(src="@|3632.png|")
     .message-box
@@ -125,8 +125,10 @@ module.exports = {
     // owo.animate('bounceInDown', this.query('.so-2-1'), 2500)
     
     setTimeout(() => {
+      new Audio("@|3837.mp3|").play()
       this.query('.fensui').classList.add('shengcheng')
       setTimeout(() => {
+        // new Audio("@|yinzhang.mp3|").play()
         // this.query('.so-2-5').style.opacity = '1'
         this.query('.so-2-2').style.display = 'block'
         this.query('.so-2-1').classList.add('ani')
@@ -241,7 +243,7 @@ module.exports = {
     }
   }
   .active p {
-    background-image: linear-gradient(#4679cb, #9198e5);
+    background-image: linear-gradient(#4576ca, #66b5e2);
     color: white;
     border-color: transparent;
   }
