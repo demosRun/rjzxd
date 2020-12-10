@@ -17,3 +17,6 @@ setTimeout(() => {
     box: '.scale-box'
   })
 }, 100);
+
+var u = navigator.userAgent;
+let isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);

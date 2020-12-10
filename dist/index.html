@@ -112,10 +112,19 @@
       </div>
     </div>
   </div>
+  <!-- 插件[music]-->
+  <div class="music-menu owo-block" template="music" style="display: none;">
+    <img class="music-icon" src="./static/resource/music.png" o-tap="switchPlay">
+  </div>
 
   <!-- 框架script文件 -->
   <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript" charset="UTF-8">
+    // 模块 music 的script代码
+    // 微信自动播放音乐
+    document.addEventListener("WeixinJSBridgeReady", function() {
+      owo.script.music.play();
+    }, false);
     owo.script = {
       "loading": {
         "data": {
@@ -338,9 +347,8 @@
           this.query('.so-0').style.display = 'none';
           this.query('.fensui').style.display = 'block'; // owo.animate('bounceInDown', this.query('.so-2-1'), 2500)
 
+          new Audio("./static/resource/3837.mp3").play();
           setTimeout(function() {
-            new Audio("./static/resource/3837.mp3").play();
-
             _this4.query('.fensui').classList.add('shengcheng');
 
             setTimeout(function() {
@@ -352,7 +360,11 @@
 
               _this4.query('.so-2-1').style.opacity = 1;
             }, 2000);
-          }, 100);
+          }, isIOS ? 500 : 100);
+
+          if (this.data.activeNumber > 8) {
+            this.query('.so-2-2').src = './static/resource/zhuanshubaogao.png';
+          }
         },
         "showYaoyan": function showYaoyan() {
           if (this.data.activeNumber > 8) {
@@ -388,56 +400,89 @@
             url = './static/resource/lave2.png';
           }
 
-          this.query('.lave').src = url; // 绘制canvas
-
-          var canvas = oCanvas.create({
-            canvas: "#canvas"
-          });
-          canvas.addChild(canvas.display.image({
-            x: 0,
-            y: 0,
-            width: 750,
-            height: 1508,
-            // origin: { x: "center", y: "center" },
-            image: "./static/resource/bg2.jpg"
-          }));
-          canvas.addChild(canvas.display.image({
-            x: 11,
-            y: 180,
-            width: 734,
-            height: 1145,
-            // origin: { x: "center", y: "center" },
-            image: "./static/resource/6386.png"
-          }));
-          canvas.addChild(canvas.display.image({
-            x: 60,
-            y: 323,
-            width: 641,
-            height: 796,
-            // origin: { x: "center", y: "center" },
-            image: url
-          }));
-          canvas.addChild(canvas.display.text({
-            x: 340,
-            y: 492,
-            width: 750,
-            align: 'end',
-            font: "bold 38px sans-serif",
-            // origin: { x: "center", y: "top" },
-            text: owo.script.page3.data.code + "\u5206",
-            fill: "#fff"
-          }));
-          canvas.addChild(canvas.display.image({
-            x: 143,
-            y: 1233,
-            width: 204,
-            height: 78,
-            // origin: { x: "center", y: "center" },
-            image: "./static/resource/share-button.png"
-          }));
+          this.query('.lave').src = url;
           setTimeout(function() {
-            _this5.query('.show').src = canvas.canvasElement.toDataURL("image/png");
-          }, 500);
+            // 绘制canvas
+            var canvas = oCanvas.create({
+              canvas: "#canvas"
+            });
+            canvas.addChild(canvas.display.image({
+              x: 0,
+              y: 0,
+              width: 750,
+              height: 1508,
+              // origin: { x: "center", y: "center" },
+              image: "./static/resource/bg2.jpg"
+            }));
+            canvas.addChild(canvas.display.image({
+              x: 11,
+              y: 180,
+              width: 734,
+              height: 1145,
+              // origin: { x: "center", y: "center" },
+              image: "./static/resource/6386.png"
+            }));
+            canvas.addChild(canvas.display.image({
+              x: 60,
+              y: 323,
+              width: 641,
+              height: 796,
+              // origin: { x: "center", y: "center" },
+              image: url
+            }));
+            canvas.addChild(canvas.display.text({
+              x: 340,
+              y: 492,
+              width: 750,
+              align: 'end',
+              font: "bold 38px sans-serif",
+              // origin: { x: "center", y: "top" },
+              text: owo.script.page3.data.code + "\u5206",
+              fill: "#fff"
+            }));
+            canvas.addChild(canvas.display.image({
+              x: 143,
+              y: 1233,
+              width: 204,
+              height: 78,
+              // origin: { x: "center", y: "center" },
+              image: "./static/resource/share-button.png"
+            }));
+            setTimeout(function() {
+              _this5.query('.show').src = canvas.canvasElement.toDataURL("image/png");
+            }, 500);
+          }, 1000);
+        }
+      },
+      "music": {
+        "data": {
+          "music": null,
+          "musicIsPlay": false
+        },
+        "switchPlay": function switchPlay() {
+          this.data.musicIsPlay ? this.pause() : this.play();
+        },
+        "play": function play() {
+          console.log('播放音乐');
+
+          if (!this.data.musicIsPlay) {
+            this.data.musicIsPlay = true;
+            this.data.music = new Audio("http://cunchu.site/people/music/%E5%92%8C%E7%85%A6%E7%9A%84%E9%A3%8E-Acoustic%20Inspiring%20Commercial-mini.mp3");
+            this.data.music.volume = 0.2;
+            this.data.music.loop = true;
+            this.data.music.play();
+            var icon = document.getElementsByClassName('music-icon')[0];
+            icon.src = './static/resource/music.png';
+            icon.classList.add('active');
+          }
+        },
+        "pause": function pause() {
+          if (this.data.musicIsPlay) {
+            this.data.musicIsPlay = false;
+            this.data.music.pause();
+            var icon = document.getElementsByClassName('music-icon')[0];
+            icon.classList.remove('active');
+          }
         }
       }
     };

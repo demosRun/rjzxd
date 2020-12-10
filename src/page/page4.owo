@@ -20,56 +20,59 @@ module.exports = {
       url = '@|lave2.png|'
     }
     this.query('.lave').src = url
-    // 绘制canvas
-    var canvas = oCanvas.create({
-      canvas: "#canvas"
-    });
-
-    canvas.addChild(canvas.display.image({
-      x: 0,
-      y: 0,
-      width: 750,
-	    height: 1508,
-      // origin: { x: "center", y: "center" },
-      image: "@|bg2.jpg|"
-    }))
-    canvas.addChild(canvas.display.image({
-      x: 11,
-      y: 180,
-      width: 734,
-	    height: 1145,
-      // origin: { x: "center", y: "center" },
-      image: "@|6386.png|"
-    }))
-    canvas.addChild(canvas.display.image({
-      x: 60,
-      y: 323,
-      width: 641,
-	    height: 796,
-      // origin: { x: "center", y: "center" },
-      image: url
-    }))
-    canvas.addChild(canvas.display.text({
-      x: 340,
-      y: 492,
-      width: 750,
-      align: 'end',
-      font: "bold 38px sans-serif",
-      // origin: { x: "center", y: "top" },
-      text: `${owo.script.page3.data.code}分`,
-      fill: "#fff"
-    }))
-    canvas.addChild(canvas.display.image({
-      x: 143,
-      y: 1233,
-      width: 204,
-	    height: 78,
-      // origin: { x: "center", y: "center" },
-      image: `@|share-button.png|`
-    }))
     setTimeout(() => {
-      this.query('.show').src = canvas.canvasElement.toDataURL("image/png")
-    }, 500);
+      // 绘制canvas
+      var canvas = oCanvas.create({
+        canvas: "#canvas"
+      });
+
+      canvas.addChild(canvas.display.image({
+        x: 0,
+        y: 0,
+        width: 750,
+        height: 1508,
+        // origin: { x: "center", y: "center" },
+        image: "@|bg2.jpg|"
+      }))
+      canvas.addChild(canvas.display.image({
+        x: 11,
+        y: 180,
+        width: 734,
+        height: 1145,
+        // origin: { x: "center", y: "center" },
+        image: "@|6386.png|"
+      }))
+      canvas.addChild(canvas.display.image({
+        x: 60,
+        y: 323,
+        width: 641,
+        height: 796,
+        // origin: { x: "center", y: "center" },
+        image: url
+      }))
+      canvas.addChild(canvas.display.text({
+        x: 340,
+        y: 492,
+        width: 750,
+        align: 'end',
+        font: "bold 38px sans-serif",
+        // origin: { x: "center", y: "top" },
+        text: `${owo.script.page3.data.code}分`,
+        fill: "#fff"
+      }))
+      canvas.addChild(canvas.display.image({
+        x: 143,
+        y: 1233,
+        width: 204,
+        height: 78,
+        // origin: { x: "center", y: "center" },
+        image: `@|share-button.png|`
+      }))
+      setTimeout(() => {
+        this.query('.show').src = canvas.canvasElement.toDataURL("image/png")
+      }, 500);
+    }, 1000);
+    
   }
 }
 </script>

@@ -112,6 +112,7 @@ module.exports = {
     this.query('.so-5').style.display = 'block'
   },
   showFensui: function () {
+    
     console.log(this.data)
     data = this.data
     let codeItem = data.daan[data.activeNumber][data.activeIndex]
@@ -123,9 +124,9 @@ module.exports = {
     this.query('.so-0').style.display = 'none'
     this.query('.fensui').style.display = 'block'
     // owo.animate('bounceInDown', this.query('.so-2-1'), 2500)
-    
+    new Audio("@|3837.mp3|").play()
     setTimeout(() => {
-      new Audio("@|3837.mp3|").play()
+      
       this.query('.fensui').classList.add('shengcheng')
       setTimeout(() => {
         // new Audio("@|yinzhang.mp3|").play()
@@ -134,8 +135,10 @@ module.exports = {
         this.query('.so-2-1').classList.add('ani')
         this.query('.so-2-1').style.opacity = 1
       }, 2000);
-    }, 100);
-    
+    }, isIOS ? 500:100);
+    if (this.data.activeNumber > 8) {
+      this.query('.so-2-2').src = '@|zhuanshubaogao.png|'
+    }
   },
   showYaoyan: function () {
     if (this.data.activeNumber > 8) {
