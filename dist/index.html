@@ -283,16 +283,6 @@
               "grade": 8
             }],
             [{
-              "text": "中方措施是对美方长期打压中方驻美媒体机构、特别是近期驱逐60名中方记者的对等反制。",
-              "grade": 10
-            }, {
-              "text": "中方始终欢迎各国媒体和记者依法依规在中国从事采访报道工作，并将继续提供便利和协助。",
-              "grade": 6
-            }, {
-              "text": "疫情以来，大批外国驻华记者在武汉采访，发表大量第一手报道，外界获取中国有关疫情信息未受任何影响。",
-              "grade": 8
-            }],
-            [{
               "text": "要求中国为疫情负责、赔偿没有任何法律依据，实质上是美国一些政客出于国内政治甩锅推责的手段。",
               "grade": 8
             }, {
@@ -301,6 +291,16 @@
             }, {
               "text": "上世纪80年代，艾滋病首先在美国发现并蔓延至全世界，国际社会从未要求美承担赔偿责任。",
               "grade": 10
+            }],
+            [{
+              "text": "中方措施是对美方长期打压中方驻美媒体机构、特别是近期驱逐60名中方记者的对等反制。",
+              "grade": 10
+            }, {
+              "text": "中方始终欢迎各国媒体和记者依法依规在中国从事采访报道工作，并将继续提供便利和协助。",
+              "grade": 6
+            }, {
+              "text": "疫情以来，大批外国驻华记者在武汉采访，发表大量第一手报道，外界获取中国有关疫情信息未受任何影响。",
+              "grade": 8
             }]
           ]
         },
@@ -400,6 +400,7 @@
             url = './static/resource/lave2.png';
           }
 
+          owo.animate('bounceIn', this.query('.code'), 1000);
           this.query('.lave').src = url;
           setTimeout(function() {
             // 绘制canvas
@@ -468,7 +469,7 @@
           if (!this.data.musicIsPlay) {
             this.data.musicIsPlay = true;
             this.data.music = new Audio("http://cunchu.site/people/music/%E5%92%8C%E7%85%A6%E7%9A%84%E9%A3%8E-Acoustic%20Inspiring%20Commercial-mini.mp3");
-            this.data.music.volume = 0.2;
+            this.data.music.volume = 1;
             this.data.music.loop = true;
             this.data.music.play();
             var icon = document.getElementsByClassName('music-icon')[0];

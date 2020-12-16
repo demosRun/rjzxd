@@ -12,6 +12,7 @@
 <script>
 module.exports = {
   created: function () {
+
     let url = '@|lave1.png|'
     this.query('.code').innerText = `${owo.script.page3.data.code}分`
     if (owo.script.page3.data.code > 90) {
@@ -19,6 +20,7 @@ module.exports = {
     } else if (owo.script.page3.data.code > 80) {
       url = '@|lave2.png|'
     }
+    owo.animate('bounceIn', this.query('.code'), 1000)
     this.query('.lave').src = url
     setTimeout(() => {
       // 绘制canvas
