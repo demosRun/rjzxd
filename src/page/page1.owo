@@ -49,13 +49,11 @@
 }
 .so-3 {
   left: 89px;
-  top: 250px;
-  z-index: -3;
+  top: 275px;
 }
 .so-4 {
-  left: 86px;
-  top: 366px;
-  z-index: -4;
+  left: 97px;
+  top: 395px;
 }
 .so-5 {
   left: 0px;

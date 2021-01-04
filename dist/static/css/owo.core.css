@@ -257,14 +257,12 @@ li {
 
 .page-1 .so-3 {
   left: 89px;
-  top: 250px;
-  z-index: -3;
+  top: 275px;
 }
 
 .page-1 .so-4 {
-  left: 86px;
-  top: 366px;
-  z-index: -4;
+  left: 97px;
+  top: 395px;
 }
 
 .page-1 .so-5 {
@@ -458,7 +456,7 @@ li {
   left: -30px;
   right: 0;
   top: 510px;
-  width: 635px;
+  width: 640px;
   margin: auto;
   font-size: 26px;
 }
