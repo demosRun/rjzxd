@@ -103,12 +103,12 @@
     <!-- 页面[page4]-->
     <div class="page4 page" template="page4" style="display: none;">
       <div class="so so-0">
-        <img class="so so-1" src="./static/resource/6385.png">
+        <img class="so so-1" src="./static/resource/6385.png" o-tap="showShare">
         <img class="so so-2" src="./static/resource/6384.png" o-tap="window.location.replace('')">
         <img class="so so-3" src="./static/resource/6386.png">
         <img class="lave" src="./static/resource/lave1.png">
         <div class="code">89分</div><canvas id="canvas" width="750" height="1508"></canvas>
-        <img class="show">
+        <img class="show" o-tap="hideShare()">
       </div>
     </div>
   </div>
@@ -421,7 +421,7 @@
               width: 734,
               height: 1145,
               // origin: { x: "center", y: "center" },
-              image: "./static/resource/6386.png"
+              image: "./static/resource/share.png"
             }));
             canvas.addChild(canvas.display.image({
               x: 60,
@@ -453,6 +453,17 @@
               _this5.query('.show').src = canvas.canvasElement.toDataURL("image/png");
             }, 500);
           }, 1000);
+        },
+        "showShare": function showShare() {
+          this.query('.show').style.left = '0';
+          this.query('.show').style.zIndex = 999;
+          setTimeout(function() {
+            owo.tool.toast('长按保存图片分享');
+          }, 800);
+        },
+        "hideShare": function hideShare() {
+          this.query('.show').style.left = '750px';
+          this.query('.show').style.zIndex = 1;
         }
       },
       "music": {
@@ -494,6 +505,7 @@
   <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
   <script src="./static/js/ocanvas-2.10.0.min.js" type="text/javascript" charset="UTF-8"></script>
 
+  <script src="./static/js/toast.js" type="text/javascript" charset="UTF-8"></script>
 </body>
 
 </html>

@@ -1,13 +1,13 @@
 <template lang="pug">
 .page4
   .so.so-0
-    img.so.so-1(src="@|6385.png|")
+    img.so.so-1(src="@|6385.png|" o-tap="showShare")
     img.so.so-2(src="@|6384.png|" o-tap="window.location.replace('')")
     img.so.so-3(src="@|6386.png|")
     img.lave(src="@|lave1.png|")
     .code 89分
     canvas#canvas(width="750" height="1508")
-    img.show
+    img.show(o-tap="hideShare()")
 </template>
 <script>
 module.exports = {
@@ -42,7 +42,7 @@ module.exports = {
         width: 734,
         height: 1145,
         // origin: { x: "center", y: "center" },
-        image: "@|6386.png|"
+        image: "@|share.png|"
       }))
       canvas.addChild(canvas.display.image({
         x: 60,
@@ -75,7 +75,18 @@ module.exports = {
       }, 500);
     }, 1000);
     
-  }
+  },
+  showShare: function () {
+    this.query('.show').style.left = '0'
+    this.query('.show').style.zIndex = 999
+    setTimeout(() => {
+      owo.tool.toast('长按保存图片分享')
+    }, 800);
+  },
+  hideShare: function () {
+    this.query('.show').style.left = '750px'
+    this.query('.show').style.zIndex = 1
+  },
 }
 </script>
 <style lang="less">
@@ -92,12 +103,12 @@ module.exports = {
 .so-1 {
   left: 407px;
   top: 1233px;
-  z-index: -1;
+  z-index: 99;
 }
 .so-2 {
   left: 138px;
   top: 1233px;
-  z-index: 12;
+  z-index: 99;
 }
 .so-3 {
   left: 11px;
@@ -135,9 +146,8 @@ module.exports = {
   width: 750px;
   height: 1508px;
   position: absolute;
-  left: 0;
+  left: 750px;
   top: 0;
-  z-index: 9;
-  opacity: 0;
+  transition: left 0.5s;
 }
 </style>
